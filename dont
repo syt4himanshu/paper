@@ -1,0 +1,31 @@
+DON'T.md: Avoiding AI Detection in Research Writing
+This document summarizes why Turnitin flags content as AI-generated and defines the prohibited patterns you must avoid to keep your work authentic.
+1. Why Turnitin Flags Your Work
+Turnitin’s AI writing detection tool analyzes text for specific statistical signatures that are common in LLM outputs:
+Perplexity: AI models write with very low perplexity—they choose the most statistically probable next word. If your text is "too predictable," it flags as AI.
+Burstiness: AI models tend to produce uniform sentence structures and lengths. Human writing has "burstiness"—a mix of short, punchy statements and long, complex, nested thoughts.
+Lack of Personal Trajectory: AI lacks a cohesive "personal research journey." It summarizes information without connecting it to the specific constraints, field data, or unique architectural challenges of your project.
+2. The "Don't" List: What to Avoid
+To ensure your writing passes as human-authored and technically rigorous, DO NOT do the following:
+❌ Don't use "Filler" Connectives
+Stop using generic transition phrases that act as structural padding.
+Avoid: "It is important to note," "Furthermore," "In conclusion," "It is crucial to understand," "On the other hand," "To summarize."
+Do: Use logical, direct flow. Let the technical facts connect themselves.
+❌ Don't "Summarize-List" Sources
+Do not write entries that function as a laundry list of what authors did.
+Avoid: "Author A did X. Author B did Y. Author C did Z."
+Do: Synthesize by conflict or complementarity. "While Author A suggests X, the throughput constraints found in Author B's work necessitate a different approach."
+❌ Don't use Robotic Symmetry
+Do not maintain a consistent sentence rhythm.
+Avoid: Writing three sentences in a row that are all 15-20 words long.
+Do: Break the rhythm. Use a complex, 40-word technical definition followed by a 4-word punchy claim.
+❌ Don't hide behind Passive Voice
+Do not use excessive passive construction, which makes your research sound like it happened in a vacuum.
+Avoid: "The data was collected, and the model was trained."
+Do: Assert ownership. "We collected the data and trained the model to observe latency under heavy node load."
+❌ Don't neglect the "Real-World"
+Do not write about technology as if it exists only in a lab.
+Avoid: Generalizing technical benefits without mentioning the friction of the PDS (e.g., poor connectivity, hardware limitations, staff resistance).
+Do: Always ground your technical design in the "pain points" of your specific research environment.
+3. The Golden Rule
+If you didn't think it, don't write it. If you use AI for a draft, you must rewrite it so thoroughly—adding your own specific project data, your own unique logic, and your own voice—that the AI's original statistical signature is destroyed.
