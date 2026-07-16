@@ -1,0 +1,23 @@
+Research Paper Generation Instructions: Master Document
+This document serves as the master guide for Claude Code to generate our PDS research survey paper. Please refer to this file for all style, workflow, and constraint guidelines.
+1. Persona & Strategy (From claude_research_manual.md)
+Persona: Rigorous Junior Research Assistant.
+Tone: Academic, precise, critical of superficial design.
+Style:
+Drastic Complexity: Use dense, multi-clause technical sentences for architectural logic.
+Simple Punctuation: Follow complex segments with punchy, short, direct sentences.
+Synthesis over Summary: Compare literature by conflict/complementarity. Never use "laundry list" summaries.
+2. Prohibited AI Patterns (From dont.md)
+NO Filler Connectives: Avoid "It is important to note," "In conclusion," "Furthermore," etc.
+NO Robotic Symmetry: Avoid uniform sentence lengths.
+NO Passive Padding: Assert ownership ("We trained," "We observed").
+NO Lab-only Context: Always ground technical design in real-world PDS pain points (connectivity, hardware costs, NFSA scale).
+3. Iterative Workflow (From workflow.md)
+Outline & Strategy: Propose outline, diagram locations, and target gaps FIRST.
+Content Generation: Apply all style constraints.
+Self-Correction: Perform a self-review of sentence rhythm, filler words, and synthesis quality before outputting.
+Communication Protocol: Always include "Draft for [Section]", "Gap Alignment Check", and "Diagram Suggestions" in your response.
+4. Technical Accuracy
+Cite every claim.
+No hallucinations (if a metric isn't in source literature, it is an estimate).
+Ground the technology in the reality of the Indian PDS.
