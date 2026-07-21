@@ -1,0 +1,649 @@
+Based on everything you've shared, your project already has:
+
+✅ React Admin Dashboard (pds-frontend)
+
+✅ Node.js + Express Backend (pds-backend)
+
+✅ PostgreSQL Database
+
+✅ Blockchain Module
+
+✅ React Native Beneficiary App
+
+❌ IoT Module (to be built)
+
+
+Your goal is not to build a separate IoT project. Your goal is to make the IoT device another client of your existing backend.
+
+
+---
+
+IoT Integration Master Plan
+
+Phase 1 – Requirement Analysis (Day 1)
+
+Objective
+
+Understand where the IoT module fits into your existing architecture.
+
+Current Architecture
+
+Admin Dashboard (React)
+          │
+          ▼
+Node.js + Express Backend
+          │
+          ▼
+     PostgreSQL
+          │
+          ▼
+Blockchain Module
+
+Target Architecture
+
+React Dashboard
+                           ▲
+                           │
+                Node.js + Express API
+                 ▲                 ▲
+                 │                 │
+      Shopkeeper Module       ESP32 Device
+                                   ▲
+                                   │
+                               HX711 Module
+                                   ▲
+                                   │
+                              Load Cell
+
+Deliverables
+
+System Architecture Diagram
+
+Data Flow Diagram
+
+Hardware List
+
+
+
+---
+
+Phase 2 – Hardware Procurement (Day 2)
+
+Purchase
+
+Component	Quantity
+
+ESP32 DevKit V1	1
+HX711 Module	1
+5kg Load Cell	1
+Breadboard	1
+Jumper Wires	1
+USB Cable	1
+Acrylic Sheet	1
+Wooden Base	1
+Screws & Spacers	1 Set
+
+
+
+---
+
+Phase 3 – Learn ESP32 Basics (Day 3–4)
+
+Learn
+
+What is ESP32
+
+GPIO Pins
+
+Power Supply
+
+Serial Monitor
+
+Uploading Code
+
+Digital vs Analog Pins
+
+Wi-Fi Connection
+
+
+Tasks
+
+Install Arduino IDE
+
+Install ESP32 Board Package
+
+Blink LED
+
+Print "Hello World"
+
+
+Deliverable
+
+ESP32 successfully programmed.
+
+
+---
+
+Phase 4 – Build Hardware Model (Day 5)
+
+Physical Assembly
+
+Rice Bowl
+
+↓
+
+Acrylic Platform
+
+↓
+
+Load Cell
+
+↓
+
+Wooden Base
+
+Then connect
+
+Load Cell
+
+↓
+
+HX711
+
+↓
+
+ESP32
+
+Deliverable
+
+Prototype assembled.
+
+
+---
+
+Phase 5 – Sensor Calibration (Day 6)
+
+Objective
+
+Make the load cell measure correctly.
+
+Procedure
+
+Place
+
+1kg
+
+2kg
+
+5kg
+
+
+Adjust calibration factor.
+
+Output
+
+Actual
+
+4.99kg
+
+instead of
+
+3.52kg
+
+Deliverable
+
+Accurate sensor.
+
+
+---
+
+Phase 6 – ESP32 Reads Weight (Day 7)
+
+ESP32 should print
+
+Weight
+
+0.0kg
+
+2.1kg
+
+4.95kg
+
+inside Serial Monitor.
+
+Deliverable
+
+Live sensor reading.
+
+
+---
+
+Phase 7 – Connect ESP32 to Wi-Fi (Day 8)
+
+ESP32 connects
+
+ESP32
+
+↓
+
+WiFi
+
+↓
+
+Internet
+
+Deliverable
+
+Internet connected.
+
+
+---
+
+Phase 8 – Backend Integration (Day 9)
+
+Inside
+
+pds-backend
+
+Create
+
+POST /api/iot/weight
+
+Request
+
+{
+"shopId":"FPS001",
+"beneficiaryId":"BEN001",
+"weight":4.96
+}
+
+Backend receives
+
+↓
+
+Validates
+
+↓
+
+Stores
+
+Deliverable
+
+Working API.
+
+
+---
+
+Phase 9 – Database Modification (Day 9)
+
+Modify transaction table.
+
+Add
+
+actual_weight
+
+sensor_status
+
+sensor_timestamp
+
+sensor_device_id
+
+Example
+
+Transaction	Expected	Actual
+
+T101	5kg	4.95kg
+
+
+
+---
+
+Phase 10 – Backend Verification Logic (Day 10)
+
+Backend compares
+
+Expected
+
+5kg
+
+↓
+
+Actual
+
+4.60kg
+
+↓
+
+Difference
+
+0.40kg
+
+Decision
+
+Difference > 100g
+
+↓
+
+Fraud Alert
+
+Store
+
+PASS
+
+or
+
+FAIL
+
+
+---
+
+Phase 11 – React Dashboard (Day 11)
+
+Add
+
+Live Weight Card
+
+Current Weight
+
+4.98kg
+
+Comparison Card
+
+Expected
+
+5kg
+
+Actual
+
+4.98kg
+
+Status
+
+✔ Correct
+
+❌ Short Weighing
+
+History Table
+
+Beneficiary
+
+Expected
+
+Actual
+
+Difference
+
+Status
+
+
+---
+
+Phase 12 – Blockchain Integration (Day 12)
+
+After successful verification
+
+Transaction
+
+↓
+
+Generate SHA256 Hash
+
+↓
+
+Store Hash
+
+Hash contains
+
+Transaction ID
+
+Weight
+
+Timestamp
+
+Beneficiary
+
+Shop
+
+
+---
+
+Phase 13 – AI Integration (Day 13)
+
+AI reads
+
+Transaction History
+
+Example
+
+Shop A
+
+5kg
+
+5kg
+
+4kg
+
+3.8kg
+
+4kg
+
+AI detects
+
+Repeated Short Weighing
+
+Alert generated.
+
+
+---
+
+Phase 14 – Final Workflow (Day 14)
+
+Complete System Flow
+
+Beneficiary
+
+↓
+
+OTP Authentication
+
+↓
+
+Shopkeeper Login
+
+↓
+
+Select Beneficiary
+
+↓
+
+Expected Weight Loaded
+
+↓
+
+Rice Placed on Platform
+
+↓
+
+Load Cell Measures Weight
+
+↓
+
+HX711 Converts Signal
+
+↓
+
+ESP32 Reads Weight
+
+↓
+
+ESP32 Sends HTTP Request
+
+↓
+
+Node.js API Receives Data
+
+↓
+
+Backend Validates Weight
+
+↓
+
+Store in PostgreSQL
+
+↓
+
+Blockchain Hash Generated
+
+↓
+
+AI Checks Fraud Pattern
+
+↓
+
+React Dashboard Updates
+
+↓
+
+Admin Receives Alert
+
+
+---
+
+Project Folder Changes
+
+PDS ROOT
+
+pds-backend
+│
+├── routes
+│     iotRoutes.js
+│
+├── controllers
+│     iotController.js
+│
+├── services
+│     weightService.js
+│
+├── models
+│     sensorModel.js
+│
+└── middleware
+
+pds-frontend
+│
+├── pages
+│     LiveWeight.jsx
+│
+├── components
+│     WeightCard.jsx
+│
+└── services
+      iotApi.js
+
+iot-device
+│
+├── esp32_code.ino
+│
+├── calibration.ino
+│
+└── README.md
+
+
+---
+
+APIs to Create
+
+POST /api/iot/weight
+
+Store live sensor data.
+
+GET /api/iot/live
+
+Return latest weight.
+
+GET /api/iot/history
+
+Return sensor history.
+
+POST /api/iot/calibrate
+
+Update calibration factor.
+
+
+---
+
+Database Changes
+
+iot_devices
+
+device_id
+device_name
+shop_id
+status
+last_seen
+
+sensor_readings
+
+reading_id
+device_id
+weight
+timestamp
+
+transactions
+
+expected_weight
+actual_weight
+difference
+status
+
+
+---
+
+Expected Final Demonstration
+
+1. Admin logs in.
+
+
+2. Shopkeeper selects a beneficiary.
+
+
+3. System displays Expected Weight = 5 kg.
+
+
+4. Rice is placed on the IoT weighing platform.
+
+
+5. ESP32 measures 4.92 kg.
+
+
+6. ESP32 sends the value to your backend.
+
+
+7. Backend compares expected vs. actual weight.
+
+
+8. Blockchain stores the transaction hash.
+
+
+9. React dashboard immediately updates with the measured weight.
+
+
+10. If the difference exceeds the threshold, the dashboard displays "Short Weighing Detected" and the admin receives an alert.
+
+
+
+
+---
+
+Recommendation
+
+Since you're new to IoT, don't try to build everything in one go. Divide the work into three milestones:
+
+Milestone 1: Build and calibrate the IoT weighing machine (ESP32 + HX711 + Load Cell).
+
+Milestone 2: Connect the ESP32 to your existing Node.js backend using REST APIs.
+
+Milestone 3: Update the React dashboard to display live weight, compare expected vs. actual values, and trigger blockchain logging and AI-based fraud detection.
+
+
+This approach keeps the integration manageable while preserving your existing software architecture.
